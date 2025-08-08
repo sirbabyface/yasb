@@ -350,6 +350,40 @@ For more information about configuration options, please visit the Wiki https://
 .notification-widget .icon {
     font-size: 14px;
 }
-.notification-widget .icon.new-notification {
+}.notification-widget .icon.new-notification {
     color: var(--blue);
+}
+
+/* Google Meet menu (Qt Stylesheets do not support flex/gap; use margins instead) */
+.google-meet-menu .item {
+    /* spacing and padding handled by layout; keep padding only */
+    padding: 6px 8px;
+}
+.google-meet-menu .item:hover {
+    background-color: rgba(255,255,255,0.06);
+}
+.google-meet-menu .item[selected="true"] {
+    background-color: rgba(0, 153, 255, 0.20);
+}
+.google-meet-menu .icon {
+    font-size: 14px;
+    min-width: 18px;
+    margin-right: 6px; /* simulate gap */
+}
+.google-meet-menu .time {
+    color: #a6adc8;
+    font-size: 12px;
+    min-width: 150px;
+    margin-right: 6px; /* simulate gap */
+}
+.google-meet-menu .title {
+    color: #e6e6e6;
+    font-size: 13px;
+}
+.google-meet-menu .copy {
+    margin-left: 6px;
+    color: #c8d3f5;
+}
+.google-meet-menu .copy:hover {
+    color: #ffffff;
 }

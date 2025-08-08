@@ -103,6 +103,16 @@ if __name__ == "__main__":
 
     sys.excepthook = exception_hook
 
+    # Optional dependencies check (non-fatal)
+    try:
+        import icalendar  # type: ignore
+    except Exception:
+        logging.warning("Optional dependency 'icalendar' is not installed. Google Meet calendar recurrence parsing will be limited. Run: pip install icalendar python-dateutil")
+    try:
+        import dateutil  # type: ignore
+    except Exception:
+        logging.warning("Optional dependency 'python-dateutil' is not installed. Recurring events expansion may be limited. Run: pip install python-dateutil")
+
     try:
         # Acquire the single instance lock before doing any heavy initialization
         with single_instance_lock():
